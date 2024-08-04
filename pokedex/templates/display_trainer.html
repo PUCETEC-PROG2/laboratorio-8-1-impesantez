@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}{{ trainer }}{% endblock title %}
+{% block content %}
+    <h5 class="py-4">Has elegido al entrenador: <strong>{{ trainer | capfirst }}</strong></h5>
+    <div class="row">
+        <div class="col-12 col-lg-8">
+            <div class="card bg-secondary">
+                <div class="card-body">
+                    <h5 class="mb-3 text-white">Datos:</h5>
+                    <ul class="list-group">
+                        <li class="list-group-item list-group-item-secondary text-dark">Nombre: {{ trainer.name }}</li>
+                        <li class="list-group-item list-group-item-secondary text-dark">Apellido: {{ trainer.last_name }}</li>
+                        <li class="list-group-item list-group-item-secondary text-dark">Año de nacimiento: {{ trainer.birth_date }}</li>
+                        <li class="list-group-item list-group-item-secondary text-dark">Nivel: {{ trainer.level }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-lg-4">
+                    <img src="{{ trainer.picture.url }}" class="img-fluid" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

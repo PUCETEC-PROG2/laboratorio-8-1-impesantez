@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Añadir entrenador{% endblock title %}
+{% block content %}
+    <form class="p-3 bg-secondary text-white" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <strong>
+            {{ form.as_p }}
+        </strong>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+{% endblock content %}
