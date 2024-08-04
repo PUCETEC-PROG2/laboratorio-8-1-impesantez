@@ -13,9 +13,6 @@
                     Peso: {{ pokemon.weight }}
                 </p>
                 <ul style: "float:left;">
-                    <a href="pokemon/{{ pokemon.id }}" class="btn btn-primary">
-                        <i class="fa-solid fa-hurricane"></i>
-                    </a>
                     {% if user.is_authenticated %}
                     <a href="edit_pokemon/{{ pokemon.id }}" class="btn btn-primary">
                         <i class="fa-solid fa-pen-to-square"></i>
@@ -44,9 +41,6 @@
                             Apellido: {{ trainer.last_name }} <br>
                             Nivel: {{ trainer.level }}
                             <ul style: "float:left;">
-                                <a href="trainer/{{ rainer.id }}" class="btn btn-primary">
-                                    <i class="fa-solid fa-hurricane"></i>
-                                </a>
                                 {% if user.is_authenticated %}
                                 <a href="edit_trainer/{{ trainer.id }}" class="btn btn-primary">
                                     <i class="fa-solid fa-pen-to-square"></i>

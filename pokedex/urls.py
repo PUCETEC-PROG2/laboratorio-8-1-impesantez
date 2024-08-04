@@ -5,7 +5,8 @@ from . import views
 app_name = 'pokedex'
 urlpatterns = [
     path("", views.index, name="index"),
-    path("pokemon/<int:pokemon_id>/", views.pokemon, name="pokemon"), 
+    path("pokemon/<int:pokemon_id>/", views.pokemon, name="pokemon"),
+    path("trainer/<int:trainer_id>/", views.trainer, name="trainer"), 
     path("add_pokemon/", views.add_pokemon, name="add_pokemon"),
     path("add_trainer/", views.add_trainer, name="add_trainer"),
     path("edit_pokemon/<int:id>/", views.edit_pokemon, name="edit_pokemon"), 
