@@ -21,12 +21,20 @@ def index(request):
     return HttpResponse(template.render(context, request))
 
 def pokemon(request, pokemon_id):
-    pokemon = get_object_or_404(id=pokemon_id)
+    pokemon = Pokemon.objects.get(id=pokemon_id)
     template = loader.get_template('display_pokemon.html')
+    context = {
+        'pokemon': pokemon,
+        }
+    return HttpResponse(template.render(context, request))
 
 def trainer(request, trainer_id):
     trainer = Trainer.objects.get(id=trainer_id)
     template = loader.get_template('display_trainer.html')
+    context = {
+        'trainer': trainer,    
+        }
+    return HttpResponse(template.render(context, request))
 
 def add_pokemon(request):
     if request.method == 'POST':
